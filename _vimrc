@@ -22,7 +22,32 @@ syntax enable " 構文に色を付ける
 set background=dark
 colorscheme industry
 
-" NeoBundle
+" [unite]
+" インサートモードで開く
+let g:unite_enable_start_insert=1
+" 表示フォーマットなし、早くなる
+let g:unite_source_file_mru_filename_format = ''
+" ファイル履歴の数
+let g:unite_source_file_mru_limit = 50
+" (C-F):current directory files/(C-B):buffer/(C-H):history
+noremap <C-F> :Unite -buffer-name=file file<CR>
+noremap <C-B> :Unite buffer<CR>
+noremap <C-H> :Unite file_mru<CR>
+" set to sources the current directory
+noremap :utf :<C-u>UniteWithBufferDir file -buffer-name-file<CR>
+" (C-S):open vertically
+au FileType unite nnoremap <silent> <buffer> <expr> <C-S> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-S> unite#do_action('vsplit')
+" (ESC-ESC):quit
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+
+" initial functionn
+au FileType unite call s:unite_my_settings()
+  function! s:unite_my_settings()
+  endfunction
+
+" [NeoBundle]
 set nocompatible
 
 if has('vim_starting')
