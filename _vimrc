@@ -1,5 +1,6 @@
 " backup
-set directory=~/.vim/backup
+set directory=~/.vim/backup "swp
+set backupdir=~/.vim/backup "~
 
 " 表示
 set number " 行番号
