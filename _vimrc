@@ -38,14 +38,33 @@ map t0 :tabfirst<CR>
 " [unite]
 " インサートモードで開く
 let g:unite_enable_start_insert=1
+" 大文字小文字区別なし
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+" grep検索
+nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+" grep検索 ディレクトリ指定
+nnoremap <silent> ,dg  :<C-u>Unite grep -buffer-name=search-buffer<CR>
+" grep検索 カーソル位置の単語
+nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
+" grep検索 結果の再呼出
+nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
+" grep検索 プロジェクト内
+nnoremap <silent> ,e  :<C-u>Unite file_rec/async:!<CR>
+" unite grep に ag(The Silver Searcher) を使う
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
 " 表示フォーマットなし、早くなる
 let g:unite_source_file_mru_filename_format = ''
 " ファイル履歴の数
 let g:unite_source_file_mru_limit = 50
 " (C-F):current directory files/(C-B):buffer/(C-H):history
-noremap <C-F> :Unite -buffer-name=file file<CR>
-noremap <C-B> :Unite buffer<CR>
-noremap <C-H> :Unite file_mru<CR>
+noremap <C-U> :Unite -buffer-name=file file<CR>
+"noremap <C-B> :Unite buffer<CR>
+"noremap <C-H> :Unite file_mru<CR>
 " set to sources the current directory
 noremap :utf :<C-u>UniteWithBufferDir file -buffer-name-file<CR>
 " (ESC-ESC):quit
@@ -134,6 +153,10 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'croaker/mustang-vim'
 NeoBundle 'sjl/badwolf'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'git://github.com/Shougo/vimproc'
+" 初回のみコンパイルが必要
+" cd ~/.vim/bundle/vimproc
+" make
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Lokaltog/vim-powerline'
