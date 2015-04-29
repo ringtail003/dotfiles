@@ -24,7 +24,6 @@ set autoindent
 " 色
 syntax enable " 構文に色を付ける
 set background=dark
-colorscheme industry
 
 " 強調表示
 hi MatchParen ctermbg=1
