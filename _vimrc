@@ -163,6 +163,8 @@ NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'derekwyatt/vim-scala'
 
 call neobundle#end()
 
@@ -170,3 +172,6 @@ filetype plugin indent on
 
 NeoBundleCheck
 
+" vim-scala setting
+" 拡張子scalaのハイライトシンタックスを有効に
+au BufNewFile,BufRead *.scala setf scala
