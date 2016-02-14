@@ -21,6 +21,9 @@ set shiftwidth=2 " 自動挿入インデントや< >で挿入/削除するイン
 set expandtab " タブをスペースに展開
 set autoindent
 
+" .un~を作らない
+set noundofile
+
 " 色
 syntax enable " 構文に色を付ける
 set background=dark
