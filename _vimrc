@@ -151,7 +151,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'git://github.com/Shougo/vimproc'
+NeoBundle 'Shougo/vimproc'
 " 初回のみコンパイルが必要
 " cd ~/.vim/bundle/vimproc
 " make
