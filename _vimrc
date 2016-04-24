@@ -24,10 +24,6 @@ set autoindent
 " .un~を作らない
 set noundofile
 
-" 色
-syntax enable " 構文に色を付ける
-set background=dark
-
 " 強調表示
 hi MatchParen ctermbg=1
 
@@ -153,8 +149,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'croaker/mustang-vim'
-NeoBundle 'sjl/badwolf'
+NeoBundle 'tomasr/molokai'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'git://github.com/Shougo/vimproc'
 " 初回のみコンパイルが必要
@@ -174,6 +169,11 @@ call neobundle#end()
 filetype plugin indent on
 
 NeoBundleCheck
+
+" 色
+syntax enable " 構文に色を付ける
+"set background=dark
+colorscheme molokai
 
 " vim-scala setting
 " 拡張子scalaのハイライトシンタックスを有効に
