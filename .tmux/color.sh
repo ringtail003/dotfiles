@@ -5,7 +5,8 @@
 for i in $(seq 0 4 255); do
 	for j in $(seq $i $(expr $i + 3)); do
     for l in $(seq 0 7); do
-		  printf "\x1b[3${l};48;5;${j}mcolour${j}\x1b[m "
+      name=$(printf "fg=%s,bg=%03s" "${l}" "${j}")
+		  printf "\x1b[3${l};48;5;${j}m ${name} \x1b[m"
     done
 	  printf "\n"
 	done
