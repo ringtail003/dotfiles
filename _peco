@@ -1,0 +1,15 @@
+{
+  "InitialFilter": "IgnoreCase",
+  "Style": {
+    "Basic": ["on_default", "default"],
+    "SavedSelection": ["bold", "on_yellow", "white"],
+    "Selected": ["underline", "on_cyan", "black"],
+    "Query": ["yellow", "bold"],
+    "Matched": ["red", "on_blue"]
+  },
+  "keymap": {
+    "C-k": "peco.SelectPrevious",
+    "C-j": "peco.SelectNext",
+    "C-c": "peco.Cancel"
+  }
+}
