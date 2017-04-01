@@ -85,7 +85,7 @@ au FileType unite call s:unite_my_settings()
 " 左側にnerdtreeeだけ残ったら自動で閉じる
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " key mapping(open/close)
-map <C-n> :NERDTreeToggle<CR>
+map <C-t> :NERDTreeToggle<CR>
 
 " [neosnippet]
 " Plugin key-mappings.
