@@ -69,8 +69,7 @@ PROMPT=$p1$p2$'\n'"%% "
 
 # エイリアス.
 alias ls="gls --color=auto"
-alias lla="ls -la"
-alias llah="ls -ah"
+alias ll="ls -lah"
 alias cp="cp -p"
 alias mkdir="mkdir -p"
 alias g="git"
