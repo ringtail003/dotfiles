@@ -68,13 +68,8 @@ local p2="%1(v|%F{red}%1v%f|)"
 PROMPT=$p1$p2$'\n'"%% "
 
 # エイリアス.
-alias ls="gls --color=auto"
 alias ll="ls -lah"
-alias cp="cp -p"
-alias mkdir="mkdir -p"
 alias g="git"
-alias mysql="mysql --auto-rehash"
-alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 
 if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
   alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
