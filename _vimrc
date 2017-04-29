@@ -163,6 +163,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'Quramy/tsuquyomi'
 
 call neobundle#end()
 
