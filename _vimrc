@@ -179,3 +179,6 @@ colorscheme molokai
 " vim-scala setting
 " 拡張子scalaのハイライトシンタックスを有効に
 au BufNewFile,BufRead *.scala setf scala
+
+" json key/valueのフォーカス行だけダブルクォートを表示するのをやめる
+set conceallevel=0
