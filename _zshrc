@@ -7,10 +7,14 @@ export C_INCLUDE_PATH="/usr/include/"
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages/"
 export NVM_DIR="/Users/matsuoka/.nvm" 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" 
+export NVM_SYMLINK_CURRENT=true
 
 PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH
 PATH=/usr/local/share/npm/bin:$PATH   # for npm apps.
 PATH=~/.gem/ruby/2.0.0/bin:$PATH      # for gems.
+export PATH="/Users/matsuoka/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
+export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH
 
 # 補完機能の強化.
@@ -98,3 +102,16 @@ export NVM_DIR="$HOME/.nvm"
 
 # tmux
 alias tmuxn="tmux -2 new-session \; source-file ~/.tmux/new-session"
+
+
+
+
+
+
+
+
+alias utf8:unescape='(){echo "$1"|sed -e "s/u\([0-9a-f][0-9a-f][0-9a-f][0-9a-f]\)/\&#x\1;/g"| nkf --numchar-input}'
+alias utf8:decode='(){echo $1|nkf --url-input}'
+alias utf8:parse='(){if [[ "$1" == *%* ]]; then utf8:decode "$1"; else utf8:unescape "$1"; fi}'
+
+
