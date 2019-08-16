@@ -85,7 +85,7 @@ au FileType unite call s:unite_my_settings()
 " 左側にnerdtreeeだけ残ったら自動で閉じる
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " key mapping(open/close)
-nnoremap <Space>n :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 " [neosnippet]
 " Plugin key-mappings.
@@ -163,7 +163,6 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'Quramy/tsuquyomi'
 
 call neobundle#end()
 
@@ -178,7 +177,7 @@ colorscheme molokai
 
 " vim-scala setting
 " 拡張子scalaのハイライトシンタックスを有効に
-au BufNewFile,BufRead *.scala setf scala
+" au BufNewFile,BufRead *.scala setf scala
 
-" json key/valueのフォーカス行だけダブルクォートを表示するのをやめる
+" jsonのダブルクォート非表示が邪魔
 set conceallevel=0
