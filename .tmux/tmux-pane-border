@@ -1,17 +1,50 @@
 #!/bin/zsh
 
+bg_blue="#[fg=colour0,bg=colour12]"
+bg_lightblue="#[fg=colour7,bg=colour33]"
+fg_blue="#[fg=colour27,bg=colour16]"
+fg_red="#[fg=colour198,bg=colour16]"
+
+# git
 if git_status=$(cd $1 && git status 2>/dev/null ); then
   git_branch="$(echo $git_status| awk 'NR==1 {print $3}')"
 
   if [[ $git_branch = "release" || $git_branch = "master" ]]; then
-    git_branch_format="#[fg=colour7,bg=colour197] ${git_branch}"
+    fg_git=$fg_red
   else
-    git_branch_format="#[fg=colour7,bg=colour033] ${git_branch}"
+    fg_git=$fg_blue
+  fi
+ 
+  case $git_status in
+    *Changes\ not\ staged* ) git_status="+" ;;
+    *Changes\ to\ be\ committed* ) git_status="++" ;; 
+    *currently\ editing\ a\ commit\ while\ rebasing* ) git_status="in progress(rebase)" ;;
+    *interactive\ rebase\ in\ progress* ) git_status="in progress(rebase)" ;;
+    *currently\ cherry-picking\ commit* ) git_status="in progress(cherry-pick)" ;;
+    * ) git_status="---" ;;
+  esac
+
+  if [[ $git_status == "---" ]]; then
+    fg_git_status=$fg_blue
+  else
+    fg_git_status=$fg_red
   fi
 else
-  git_branch=""
+  git_branch="---"
+  fg_git=$fg_blue
+  git_status="---"
+  fg_git_status=$fg_blue
 fi
 
-directory="#[fg=colour0,bg=colour12] NODE #[fg=colour27,bg=colour16] $(node -v) #[fg=colour0,bg=colour12] PATH #[fg=colour27,bg=colour16] $1 $git_branch_format "
+# node
+node_version=$(node -v)
 
-echo "$directory$git_info"
+# package.json
+if package_name=$(cd $1 && ls package.json 2>/dev/null ); then
+  package_name="$(node -e "console.log(require('$1/package.json')['name'])")"
+else
+  package_name="---"
+fi
+
+
+echo "$bg_blue NODE $fg_blue $node_version $bg_blue PACKAGE $fg_blue $package_name $bg_lightblue BRANCH $fg_git $git_branch $bg_lightblue STATUS $fg_git_status $git_status "
