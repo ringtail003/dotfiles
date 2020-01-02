@@ -76,17 +76,21 @@ setopt noautoremoveslash    # 最後のスラッシュを自動的に削除し�
 # Git コマンドの補完 (要 brew install zsh-completions)
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# プロンプト改変. (Git のブランチ情報も出力)
+# hooks:prompt
 autoload -Uz vcs_info
 precmd () {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+    #psvar=()
+    #LANG=en_US.UTF-8 vcs_info
+    #[[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+
+    if [ ! -z $TMUX ]; then
+      tmux refresh-client -S
+    fi
 }
 autoload colors
 colors
-local p1="%F{green}[%~]%f %F{cyan}%n@%m%f"
-local p2="%1(v|%F{red}%1v%f|)"
+local p1="%F{cyan}%~%f"
+local p2="%1(v|%F{white}%1v%f|)"
 PROMPT=$p1$p2$'\n'"%% "
 
 # エイリアス.
