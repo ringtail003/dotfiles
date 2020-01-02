@@ -172,8 +172,7 @@ NeoBundleCheck
 
 " 色
 syntax enable " 構文に色を付ける
-"set background=dark
-colorscheme molokai
+colorscheme industry 
 
 " vim-scala setting
 " 拡張子scalaのハイライトシンタックスを有効に
