@@ -77,21 +77,25 @@ setopt noautoremoveslash    # 最後のスラッシュを自動的に削除し�
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # hooks:prompt
-autoload -Uz vcs_info
-precmd () {
-    #psvar=()
-    #LANG=en_US.UTF-8 vcs_info
-    #[[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-
-    if [ ! -z $TMUX ]; then
-      tmux refresh-client -S
-    fi
-}
 autoload colors
 colors
-local p1="%F{cyan}%~%f"
-local p2="%1(v|%F{white}%1v%f|)"
-PROMPT=$p1$p2$'\n'"%% "
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "++"
+zstyle ':vcs_info:git:*' unstagedstr "+"
+zstyle ':vcs_info:*' formats "%F{white}%K{cyan} %b%c%u %{$reset_color%}"
+zstyle ':vcs_info:*' actionformats "%F{white}%K{cyan} %b %{$reset_color%} %F{yellow}%a %{$reset_color%}"
+
+precmd () {
+  LANG=en_US.UTF-8 vcs_info
+
+  if [ ! -z $TMUX ]; then
+    tmux refresh-client -S
+  fi
+}
+PROMPT="%F{cyan}%~%f ${vcs_info_msg_0_}"$'\n'"%F{white}> "
+RPROMPT="%F{white}%T"
 
 # エイリアス.
 alias ls="gls --color=auto"
