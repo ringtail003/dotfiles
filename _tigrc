@@ -162,12 +162,11 @@ bind main       @ra     !git rebase --abort
 bind main       @st     !git stash
 bind main       @sp     !git stash pop
 bind main       @fc     !git commit -m "[ci skip]" --allow-empty
-bind main       @pr     !git pull --rebase origin master
+bind main       @rebase !git pull --rebase origin master
 bind main       @new    !?git checkout -b %(prompt) origin/master
 bind main       @push   ?git push origin %(branch)
+bind main       @rename ?git br -m %(prompt)
 bind main       @open   !hub browse
-bind main       @bak    ?git br -m %(branch)-bak
-bind main       @sh     ?$(git %(prompt))
 
 # Normal commands
 # ---------------
