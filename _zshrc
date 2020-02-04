@@ -85,20 +85,20 @@ autoload colors
 colors
 autoload -Uz vcs_info
 setopt prompt_subst
+
+precmd () {
+  LANG=en_US.UTF-8 vcs_info
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "++"
 zstyle ':vcs_info:git:*' unstagedstr "+"
 zstyle ':vcs_info:*' formats "%F{white}%K{cyan} %b%c%u %{$reset_color%}"
 zstyle ':vcs_info:*' actionformats "%F{white}%K{cyan} %b %{$reset_color%} %F{yellow}%a %{$reset_color%}"
 
-precmd () {
-  LANG=en_US.UTF-8 vcs_info
-
   if [ ! -z $TMUX ]; then
     tmux refresh-client -S
   fi
 }
-PROMPT="%F{cyan}%~%f ${vcs_info_msg_0_}"$'\n'"%F{white}> "
+PROMPT="%F{cyan}%~%f ${vcs_info_msg_0_}"$'\n'"%F{white}%{$reset_color%}> "
 RPROMPT="%F{white}%T"
 
 # エイリアス.
