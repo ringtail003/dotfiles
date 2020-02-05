@@ -7,7 +7,7 @@ fg_red="#[fg=colour198,bg=colour16]"
 
 # git
 if git_status=$(cd $1 && git status 2>/dev/null ); then
-  git_branch="$(git branch --contains| awk 'NR==1 {print $2}')"
+  git_branch="$(git symbolic-ref --short HEAD)"
 
   if [[ $git_branch = "release" || $git_branch = "master" ]]; then
     fg_git=$fg_red
