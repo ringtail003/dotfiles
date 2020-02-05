@@ -166,7 +166,7 @@ bind main       @rebase !git pull --rebase origin master
 bind main       @new    !?git checkout -b %(prompt) origin/master
 bind main       @push   ?git push origin %(branch)
 bind main       @rename ?git br -m %(prompt)
-bind main       @current ?git reset HEAD
+bind main       @current ?git reset --hard HEAD
 bind main       @prev    ?git reset HEAD~
 bind main       @open   !hub browse
 
