@@ -97,9 +97,10 @@ zstyle ':vcs_info:*' actionformats "%F{white}%K{cyan} %b %{$reset_color%} %F{yel
   if [ ! -z $TMUX ]; then
     tmux refresh-client -S
   fi
+
+  PROMPT="%F{cyan}%~%f ${vcs_info_msg_0_}"$'\n'"%F{white}%{$reset_color%}> "
+  RPROMPT="%F{white}%T"
 }
-PROMPT="%F{cyan}%~%f ${vcs_info_msg_0_}"$'\n'"%F{white}%{$reset_color%}> "
-RPROMPT="%F{white}%T"
 
 # エイリアス.
 alias ls="gls --color=auto"
