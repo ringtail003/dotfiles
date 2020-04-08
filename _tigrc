@@ -170,7 +170,8 @@ bind main       @reset<Enter>   ?git reset --hard HEAD
 bind main       @prev<Enter>    ?git reset HEAD~
 bind main       @backup<Enter>  ?git br %(branch)_bak
 bind main       @open<Enter>    !hub browse
-bind main       @fetch<Enter>   !git pull origin master --prune
+bind main       @fetch<Enter>   !git fetch origin --prune
+bind main       @clean<Enter>   !git clean -f -d
 
 # Normal commands
 # ---------------
