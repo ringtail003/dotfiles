@@ -32,6 +32,7 @@ PATH="$PATH:`yarn global bin`"
 export PATH
 
 # phpenv
+alias brew="env PATH=${PATH/~\/\.phpenv\/shims:/} brew"
 export PATH="/Users/matsuoka/.phpenv/bin:$PATH"
 export PATH="/usr/local/opt/bison/bin:$PATH"
 eval "$(phpenv init -)"
