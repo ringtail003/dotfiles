@@ -165,6 +165,7 @@ bind main       @fc     !git commit -m "[ci skip]" --allow-empty
 bind main       @rebase<Enter>  !git pull --rebase origin master
 bind main       @new<Enter>     !?git checkout -b %(prompt) origin/master
 bind main       @push<Enter>    ?git push origin %(branch)
+bind main       @fpush<Enter>   ?git push origin %(branch) --force-with-lease
 bind main       @rename<Enter>  ?git br -m %(prompt)
 bind main       @reset<Enter>   ?git reset --hard HEAD
 bind main       @prev<Enter>    ?git reset HEAD~
