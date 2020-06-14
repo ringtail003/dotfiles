@@ -139,3 +139,5 @@ if [ -d $ZSH_CONF -a -r $ZSH_CONF -a \
             [ \( -f $i -o -h $i \) -a -r $i ] && . $i
     done
 fi
+
+# test
