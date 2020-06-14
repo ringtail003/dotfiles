@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 bg_blue="#[fg=colour0,bg=colour12]"
-bg_lightblue="#[fg=colour7,bg=colour33]"
+bg_lightblue="#[fg=colour7,bg=colour30]"
 fg_blue="#[fg=colour27,bg=colour16]"
 fg_red="#[fg=colour198,bg=colour16]"
 

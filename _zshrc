@@ -92,7 +92,7 @@ precmd () {
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "++"
 zstyle ':vcs_info:git:*' unstagedstr "+"
-zstyle ':vcs_info:*' formats "%F{white}%K{cyan} %b%c%u %{$reset_color%}"
+zstyle ':vcs_info:*' formats "%F{white}%K (%b%c%u) %{$reset_color%}"
 zstyle ':vcs_info:*' actionformats "%F{white}%K{cyan} %b %{$reset_color%} %F{yellow}%a %{$reset_color%}"
 
   if [ ! -z $TMUX ]; then
