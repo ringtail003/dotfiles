@@ -155,7 +155,7 @@ bind status     A       !git commit --amend
 bind stash      P       ?git stash pop %(stash)
 bind stash      !       ?git stash drop %(stash)
 bind refs       C       ?git checkout %(branch)
-bind refs       !       ?git branch -D %(branch)
+bind refs       D       ?git branch -D %(branch)
 bind main       @ri     !git rebase -i %(commit)~
 bind main       @ad     !git add .
 bind main       @rc     !git rebase --continue
