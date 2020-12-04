@@ -164,7 +164,7 @@ bind main       @st     !git stash
 bind main       @sp     !git stash pop
 bind main       @fc     !git commit -m "[ci skip]" --allow-empty
 bind main       @rebase<Enter>  !git pull --rebase origin master
-bind main       @new<Enter>     !?git switch -c %(prompt) origin/master
+bind main       @new<Enter>     !?git switch -c %(prompt)
 bind main       @push<Enter>    ?git push origin %(branch) --tags
 bind main       @fpush<Enter>   ?git push origin %(branch) --tags --force-with-lease
 bind main       @rename<Enter>  ?git br -m %(prompt)
