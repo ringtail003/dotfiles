@@ -36,6 +36,7 @@ alias brew="env PATH=${PATH/~\/\.phpenv\/shims:/} brew"
 export PATH="/Users/matsuoka/.phpenv/bin:$PATH"
 export PATH="/usr/local/opt/bison/bin:$PATH"
 eval "$(phpenv init -)"
+PATH=/usr/local/opt/bzip2/bin:$PATH
 
 # mysql5.7
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
