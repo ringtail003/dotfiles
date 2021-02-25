@@ -150,8 +150,8 @@ set mouse-scroll                = 3             # Number of lines to scroll via 
 
 bind main       C       ?git cherry-pick %(commit)
 bind status     C       !gitmoji -c
-bind status     N       !git commit
-bind status     A       ?git commit --amend
+bind status     N       !git commit --no-verify
+bind status     A       !git commit --amend
 bind stash      P       ?git stash pop %(stash)
 bind stash      !       ?git stash drop %(stash)
 bind refs       C       ?git switch %(branch)
@@ -163,7 +163,7 @@ bind main       @ra     !git rebase --abort
 bind main       @st     !git stash
 bind main       @sp     !git stash pop
 bind main       @fc     !git commit -m "[ci skip]" --allow-empty
-bind main       @rebase<Enter>  !git pull --rebase origin master
+bind main       @rebase<Enter>  !git pull --rebase origin %(prompt)
 bind main       @new<Enter>     !?git switch -c %(prompt)
 bind main       @push<Enter>    ?git push origin %(branch) --tags
 bind main       @fpush<Enter>   ?git push origin %(branch) --tags --force-with-lease
