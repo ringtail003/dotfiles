@@ -160,3 +160,5 @@ source "$HOME/.cargo/env"
 # docker
 export DOCKER_CONTENT_TRUST=0
 
+# 環境変数PATHの重複を削除
+typeset -U PATH
