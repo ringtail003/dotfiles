@@ -156,3 +156,7 @@ export PKG_CONFIG_PATH="/usr/local/opt/libedit/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 # rust
 source "$HOME/.cargo/env"
+
+# docker
+export DOCKER_CONTENT_TRUST=0
+
