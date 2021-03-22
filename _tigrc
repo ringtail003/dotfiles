@@ -167,10 +167,10 @@ bind main       @rebase<Enter>  !git pull --rebase origin %(prompt)
 bind main       @new<Enter>     !?git switch -c %(prompt)
 bind main       @push<Enter>    ?git push origin %(branch) --tags
 bind main       @fpush<Enter>   ?git push origin %(branch) --tags --force-with-lease
-bind main       @rename<Enter>  ?git br -m %(prompt)
+bind main       @rename<Enter>  ?git branch -m %(prompt)
 bind main       @reset<Enter>   ?git reset --hard HEAD
 bind main       @prev<Enter>    ?git reset HEAD~
-bind main       @backup<Enter>  ?git br %(branch)_bak
+bind main       @backup<Enter>  ?git checkout -b %(branch)_bak
 bind main       @open<Enter>    !hub browse
 bind main       @fetch<Enter>   !git fetch origin --prune
 bind main       @clean<Enter>   !git clean -f -d
