@@ -32,10 +32,10 @@ PATH="$PATH:`yarn global bin`"
 export PATH
 
 # phpenv
-alias brew="env PATH=${PATH/~\/\.phpenv\/shims:/} brew"
-export PATH="/Users/matsuoka/.phpenv/bin:$PATH"
+#alias brew="env PATH=${PATH/~\/\.phpenv\/shims:/} brew"
+#export PATH="/Users/matsuoka/.phpenv/bin:$PATH"
+#eval "$(phpenv init -)"
 export PATH="/usr/local/opt/bison/bin:$PATH"
-eval "$(phpenv init -)"
 PATH=/usr/local/opt/bzip2/bin:$PATH
 PATH=$HOME/.symfony/bin:$PATH
 
