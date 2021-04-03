@@ -151,7 +151,7 @@ set mouse-scroll                = 3             # Number of lines to scroll via 
 bind main       C       ?git cherry-pick %(commit)
 bind status     C       !git commit
 bind status     N       !git commit --no-verify
-bind status     A       !git commit --amend
+bind status     A       ?git commit --amend
 bind stash      P       ?git stash pop %(stash)
 bind stash      !       ?git stash drop %(stash)
 bind refs       C       ?git switch %(branch)
