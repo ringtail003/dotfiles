@@ -175,7 +175,7 @@ bind main       @backup<Enter>  ?git checkout -b %(branch)_bak
 bind main       @open<Enter>    !hub browse
 bind main       @fetch<Enter>   !git fetch origin --prune
 bind main       @clean<Enter>   !git clean -f -d
-bind main       @weed<Enter>    !git delete-merged-branch
+bind main       @weed<Enter>    !git branch --merged|egrep -v '\*|develop|main|master'|xargs git branch -d
 
 # Normal commands
 # ---------------
