@@ -1,0 +1,18 @@
+[user]
+	name = ringtail003
+	email = ringtail003@gmail.com
+[core]
+	excludesfile = _vimrc~
+	precomposeunicode = true
+	quotepath = false
+	ignorecase = false
+	excludesfile = ~/.gitignore
+	editor = /Applications/MacVim.app/Contents/MacOS/Vim
+[color]
+	ui = auto
+[merge]
+	tool = opendiff
+[push]
+	default = current
+[commit]
+	template = ~/dotfiles/git-commit-message-template.txt
