@@ -16,7 +16,7 @@ export NVM_DIR="/Users/matsuoka/.nvm"
 export NVM_SYMLINK_CURRENT=true
 export NODE_VERSIONS="$HOME/.nvm/versions/node"
 export NODE_VERSIONS_PREFIX=""
-export PATH=$(brew --prefix)/bin:$PATH
+export PATH=$PATH:$(brew --prefix)/bin
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" 
 
 # ruby/rbenv
