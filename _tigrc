@@ -107,7 +107,7 @@ set horizontal-scroll           = 50%           # Number of columns to scroll as
 set split-view-height           = 67%           # Height of the bottom view for horizontal splits
 set vertical-split              = auto          # Enum: horizontal, vertical, auto; Use auto to
                                                 # switch to horizontal split when width allows it
-set split-view-width            = 50%           # Width of right-most view for vertical splits
+set split-view-width            = 80%           # Width of right-most view for vertical splits
 set editor-line-number          = yes           # Automatically pass line number to editor? Used
                                                 # for opening file at specific line e.g. from a diff
 set mouse                       = no            # Enable mouse support?
@@ -338,7 +338,7 @@ color "similarity "             yellow  default
 color "dissimilarity "          yellow  default
 color "diff-tree "              blue    default
 color "Author: "                white   default
-color "Commit: "                green   default
+color "Commit: "                088     default
 color "Tagger: "                magenta default
 color "Merge: "                 white   default
 color "Date: "                  yellow  default
@@ -349,10 +349,10 @@ color "Refs: "                  red     default
 color "Reflog: "                red     default
 color "Reflog message: "        yellow  default
 color "stash@{"                 magenta default
-color "commit "                 green   default
+color "commit "                 088     default
 color "parent "                 blue    default
 color "tree "                   blue    default
-color "author "                 yellow  default
+color "author "                 129     default
 color "committer "              magenta default
 color "    Signed-off-by"       yellow  default
 color "    Acked-by"            yellow  default
@@ -364,7 +364,7 @@ color status                    green   default
 color delimiter                 magenta default
 color date                      white   default
 color mode                      cyan    default
-color id                        green   default
+color id                        124     default
 color overflow                  red     default
 color header                    yellow  default
 color section                   cyan    default
