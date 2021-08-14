@@ -163,19 +163,20 @@ bind main       @ra     !git rebase --abort
 bind main       @st     !git stash
 bind main       @sp     !git stash pop
 bind main       @fc     !git commit -m "chore: [ci skip]" --allow-empty
-bind main       @lrebase<Enter> !git rebase %(prompt)
-bind main       @rebase<Enter>  !git pull --rebase origin %(prompt)
-bind main       @new<Enter>     !?git switch -c %(prompt)
-bind main       @push<Enter>    ?git push origin %(branch) --tags
-bind main       @fpush<Enter>   ?git push origin %(branch) --tags --force-with-lease
-bind main       @rename<Enter>  ?git branch -m %(prompt)
-bind main       @reset<Enter>   ?git reset --hard HEAD
-bind main       @prev<Enter>    ?git reset HEAD~
-bind main       @backup<Enter>  ?git checkout -b %(branch)_bak
-bind main       @open<Enter>    !hub browse
-bind main       @fetch<Enter>   !git fetch origin --prune
-bind main       @clean<Enter>   !git clean -f -d
-bind main       @weed<Enter>    !sh -c "git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %"
+bind main       @lrebase<Enter>  !git rebase %(prompt)
+bind main       @rebase<Enter>   !git pull --rebase origin %(prompt)
+bind main       @new<Enter>      !?git switch -c %(prompt)
+bind main       @push<Enter>     ?git push origin %(branch) --tags
+bind main       @fpush<Enter>    ?git push origin %(branch) --tags --force-with-lease
+bind main       @rename<Enter>   ?git branch -m %(prompt)
+bind main       @reset<Enter>    ?git reset --hard HEAD
+bind main       @prev<Enter>     ?git reset HEAD~
+bind main       @backup<Enter>   ?git checkout -b %(branch)_bak
+bind main       @open<Enter>     !hub browse
+bind main       @fetch<Enter>    !git fetch origin --prune
+bind main       @clean<Enter>    !git clean -f -d
+bind main       @weed<Enter>     !sh -c "git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %"
+bind main       @discover<Enter> !sh -c "git log -S%(prompt)"
 
 # Normal commands
 # ---------------
