@@ -180,3 +180,6 @@ colorscheme industry
 
 " jsonのダブルクォート非表示が邪魔
 set conceallevel=0
+
+" Gitのコミットを折り返さない
+set textwidth=0
