@@ -16,3 +16,5 @@
 	default = current
 [commit]
 	template = ~/dotfiles/git-commit-message-template.txt
+[init]
+	defaultBranch = main
