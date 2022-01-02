@@ -95,17 +95,19 @@ setopt prompt_subst
 
 precmd () {
   LANG=en_US.UTF-8 vcs_info
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "[+ staged]"
-zstyle ':vcs_info:git:*' unstagedstr "[++ changed]"
-zstyle ':vcs_info:*' formats "%F{white}%K (%b%c) %u %{$reset_color%}"
-zstyle ':vcs_info:*' actionformats "%F{white}%K{cyan} %b %{$reset_color%} %F{yellow}%a %{$reset_color%}"
+  sharp='\uE0B0'
+  zstyle ':vcs_info:git:*' check-for-changes true
+  zstyle ':vcs_info:git:*' stagedstr "[++staged]"
+  zstyle ':vcs_info:git:*' unstagedstr "[+changed]"
+  zstyle ':vcs_info:*' formats "%F{white}%K{blue} %b%c %u %{$reset_color%}"
+  zstyle ':vcs_info:*' actionformats "%F{white}%K{cyan} %b %{$reset_color%} %F{yellow}%a %{$reset_color%}"
 
   if [ ! -z $TMUX ]; then
     tmux refresh-client -S
   fi
 
-  PROMPT="%F{cyan}%~%f ${vcs_info_msg_0_}"$'\n'"%F{white}%{$reset_color%}> "
+  PROMPT="
+%F{cyan}%K %~ %f ${vcs_info_msg_0_}"$'\n'"%F{white}%{$reset_color%}> "
   RPROMPT="%F{white}%T"
 }
 
