@@ -127,3 +127,7 @@ fi
 
 # env
 typeset -U PATH # PATH変数の重複を削除
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
