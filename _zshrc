@@ -4,6 +4,7 @@ export MAKE_MODE="unix"
 export LANG="ja_JP.UTF-8"
 export JLESSCHARSET="japanese-sjis"
 export C_INCLUDE_PATH="/usr/include/"
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
