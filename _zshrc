@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 export TMPDIR="/tmp"
 export TZ="JST-09"
 export MAKE_MODE="unix"
@@ -118,6 +120,8 @@ fi
 # env
 typeset -U PATH # PATH変数の重複を削除
 
+# openssl
+export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
 
-# Load Angular CLI autocompletion.
-# source <(ng completion script)
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
