@@ -173,7 +173,7 @@ bind main       @reset<Enter>    ?git reset --hard HEAD
 bind main       @prev<Enter>     ?git reset HEAD~
 bind main       @backup<Enter>   ?git checkout -b %(branch)_bak
 bind main       @open<Enter>     !gh browse -b %(branch)
-bind main       @fetch<Enter>    !git fetch origin --prune
+bind main       @fetch<Enter>    !git fetch origin --prune --tags
 bind main       @clean<Enter>    !git clean -f -d
 bind main       @weed<Enter>     !sh -c "git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %"
 bind main       @discover<Enter> !sh -c "git log -S%(prompt)"
