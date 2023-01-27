@@ -165,6 +165,7 @@ bind main       @sp     !git stash pop
 bind main       @fc     !git commit -m "chore: [ci skip]" --allow-empty
 bind main       @lrebase<Enter>  !git rebase %(prompt)
 bind main       @rebase<Enter>   !git pull --rebase origin %(prompt)
+bind main       @frebase<Enter>  !sh -c "git fetch origin --prune --tags && git pull --rebase origin %(prompt)"
 bind main       @new<Enter>      !?git switch -c %(prompt)
 bind main       @push<Enter>     ?git push origin %(branch) --tags
 bind main       @fpush<Enter>    ?git push origin %(branch) --tags --force-with-lease --force-if-includes
