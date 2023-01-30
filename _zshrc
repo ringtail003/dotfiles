@@ -18,7 +18,7 @@ export PATH=$PATH:$(brew --prefix)/bin
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" 
 
 # mysql
-export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
+export PATH="$PATH:/usr/local/Cellar/mysql@5.7/5.7.38/bin"
 
 # shells 
 # chmod 755 $HOME/dotfiles/shells/*
