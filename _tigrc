@@ -58,6 +58,9 @@ set stash-view  = line-number:no,interval=5 id:no date:default author:full commi
 set status-view = line-number:no,interval=5 status:short file-name
 set tree-view   = line-number:no,interval=5 mode author:full file-size date:default id:no file-name
 
+set main-view-date = custom
+set main-view-date-format = "%Y-%m-%d %H:%M"
+
 # Pager based views
 set pager-view  = line-number:no,interval=5 text
 set stage-view  = line-number:no,interval=5 text
