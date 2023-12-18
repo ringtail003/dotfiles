@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 export TMPDIR="/tmp"
 export TZ="JST-09"
 export MAKE_MODE="unix"
@@ -123,9 +121,6 @@ typeset -U PATH # PATH変数の重複を削除
 
 # openssl
 export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
 # puppetter warning for Apple M1 Sillicon
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
