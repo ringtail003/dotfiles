@@ -1,3 +1,5 @@
+# PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin
+
 export TMPDIR="/tmp"
 export TZ="JST-09"
 export MAKE_MODE="unix"
