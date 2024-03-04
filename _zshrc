@@ -127,3 +127,7 @@ export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
 # puppetter warning for Apple M1 Sillicon
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+
+
+# Load Angular CLI autocompletion.
+# source <(ng completion script)
