@@ -1,5 +1,4 @@
-# PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin
-
+# variables
 export TMPDIR="/tmp"
 export TZ="JST-09"
 export MAKE_MODE="unix"
@@ -17,13 +16,6 @@ export NODE_VERSIONS_PREFIX=""
 export PATH=$PATH:$(brew --prefix)/bin
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" 
 
-# mysql
-export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
-
-
-# shells 
-# chmod 755 $HOME/dotfiles/shells/*
-export PATH="$PATH:$HOME/dotfiles/shells"
 
 # zsh
 autoload -U compinit
@@ -90,9 +82,6 @@ precmd () {
 # alias
 alias ls="gls --color=auto"
 alias ll="ls -lah"
-alias cp="cp -p"
-alias mkdir="mkdir -p"
-alias g="git"
 alias mysql="mysql --auto-rehash"
 alias tmuxn="tmux -2 new-session \; source-file ~/.tmux/new-session"
 alias pw="pwgen 10 1 -y |pbcopy && echo \"Generated password.\""
@@ -118,10 +107,14 @@ if [ -d $ZSH_CONF -a -r $ZSH_CONF -a \
     done
 fi
 
+# shells 
+export PATH="$PATH:$HOME/dotfiles/shells"
+
 # env
 typeset -U PATH # PATH変数の重複を削除
 
-# openssl
+# path
+export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
 
 # puppetter warning for Apple M1 Sillicon
