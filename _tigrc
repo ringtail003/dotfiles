@@ -166,21 +166,19 @@ bind main       @ra     !git rebase --abort
 bind main       @st     !git stash
 bind main       @sp     !git stash pop
 bind main       @fc     !git commit -m "chore: [ci skip]" --allow-empty
-bind main       @lrebase<Enter>  !git rebase %(prompt)
-bind main       @rebase<Enter>   !git pull --rebase origin %(prompt)
-bind main       @frebase<Enter>  !sh -c "git fetch origin --prune --tags && git pull --rebase origin %(prompt)"
+bind main       @rebase<Enter>   !sh -c "git fetch origin --prune --tags && git pull --rebase origin %(prompt)"
 bind main       @new<Enter>      !?git switch -c %(prompt)
 bind main       @push<Enter>     ?git push origin %(branch) --tags
 bind main       @fpush<Enter>    ?git push origin %(branch) --tags --force-with-lease --force-if-includes
 bind main       @rename<Enter>   ?git branch -m %(prompt)
-bind main       @reset<Enter>    ?git reset --hard HEAD
 bind main       @prev<Enter>     ?git reset HEAD~
 bind main       @dup<Enter>      ?git checkout -b %(branch)_bak
 bind main       @open<Enter>     !gh browse -b %(branch)
 bind main       @fetch<Enter>    !git fetch origin --prune --tags
-bind main       @clean<Enter>    !git clean -f -d
+bind main       @reset<Enter>    !sh -c "git reset --hard HEAD && git clean -f -d"
 bind main       @weed<Enter>     !sh -c "git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %"
 bind main       @discover<Enter> !sh -c "git log -S%(prompt)"
+bind main       @clip<Enter>     !sh -c "echo '%(commit)' | pbcopy"
 
 # Normal commands
 # ---------------
