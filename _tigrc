@@ -163,6 +163,7 @@ bind main       @ri     !git rebase -i %(commit)~
 bind main       @ad     !git add .
 bind main       @rc     !git rebase --continue
 bind main       @ra     !git rebase --abort
+bind main       @rs     !git rebase --skip
 bind main       @st     !git stash
 bind main       @sp     !git stash pop
 bind main       @fc     !git commit -m "chore: [ci skip]" --allow-empty
