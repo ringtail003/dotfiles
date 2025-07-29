@@ -113,6 +113,7 @@ export PATH="$PATH:$HOME/.ssh/shells"
 export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
+export PATH="$HOME/cargo/bin:$PATH"
 
 # puppetter warning for Apple M1 Sillicon
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
