@@ -1,6 +1,6 @@
 select-pane -t 0
 split-window -h
-split-window -h
+split-window -v
 select-pane -t 0
 
 rename-session '#{pane_current_path}'
