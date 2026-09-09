@@ -167,6 +167,7 @@ bind main       @rs     !git rebase --skip
 bind main       @st     !git stash
 bind main       @sp     !git stash pop
 bind main       @fc     !git commit -m "chore: [ci skip]" --allow-empty
+bind main       @tc     !git commit -m "chore: TriggerCI" --allow-empty
 bind main       @rebase<Enter>   !sh -c "git fetch origin --prune --tags && git pull --rebase origin '%(prompt branch name:)'"
 bind main       @pull<Enter>     !sh -c "git fetch origin --prune --tags && git pull --rebase origin '%(branch)'"
 bind main       @new<Enter>      !?git switch -c "%(prompt branch name: )"
